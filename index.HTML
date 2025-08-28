@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte Sanando Almas - Talleres de Bienestar y Creatividad</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos de redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Estilos personalizados y colores de la marca */
+        :root {
+            --color-lila: #C7C6E1; /* Un lila suave inspirado en tu logo */
+            --color-dorado: #E1B37F; /* Un dorado/mostaza suave inspirado en tu logo */
+            --color-fondo: #F5F5F3; /* Un fondo casi blanco, muy sereno */
+            --color-texto: #4A4A4A; /* Un gris oscuro para el texto principal */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Asegura que el scroll sea suave al navegar entre secciones */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Estilos para el video de fondo para que no se desborde y esté centrado */
+        #hero-video-container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+        }
+        
+        /* Condicionamos el tamaño máximo de las imágenes y videos en las secciones */
+        .content-media {
+            max-height: 70vh; /* Altura máxima del 70% de la ventana */
+            width: auto;
+            max-width: 100%;
+            object-fit: cover; /* Asegura que el contenido cubra el espacio sin distorsionarse */
+            border-radius: 0.75rem; /* Bordes redondeados */
+        }
+
+        /* Estilo para el video vertical de la primera diapositiva en móviles */
+        @media (max-width: 768px) {
+            #hero-video {
+                /* Ajusta el video para que se vea bien en formato vertical */
+                width: auto;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="leading-normal tracking-normal">
+
+    <!-- NAVEGACIÓN (opcional pero recomendada) -->
+    <nav class="fixed top-0 left-0 right-0 z-20 bg-white bg-opacity-80 backdrop-blur-md shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center">
+                 <!-- SUSTITUIR IMAGEN: 'logo2.jpg' - Usa una versión pequeña de tu logo aquí -->
+                <img src="imagenes/logo.png" ... alt="Logo Arte Sanando Almas" class="h-10">
+            </a>
+            <!-- Menú de navegación -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#experiencia" class="text-gray-700 hover:text-[--color-dorado] transition duration-300">La Experiencia</a>
+                <a href="#testimonios" class="text-gray-700 hover:text-[--color-dorado] transition duration-300">Testimonios</a>
+                <a href="#nosotras" class="text-gray-700 hover:text-[--color-dorado] transition duration-300">Quiénes Somos</a>
+                <a href="#contacto" class="text-gray-700 hover:text-[--color-dorado] transition duration-300">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- === DIAPOSITIVA 1: INICIO / VIDEO INTRODUCTORIO === -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center text-center text-white">
+        <!-- Contenedor del Video -->
+        <div id="hero-video-container">
+            <!-- Video de fondo -->
+            <!-- SUSTITUIR VIDEO: Reemplaza 'head.mp4' con la ruta a tu video.<video src="media/video_emotivo.mp4" ...> -->
+            <video id="hero-video" autoplay loop muted playsinline>
+                <source src="videos/head.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+        </div>
+
+        <!-- Capa de superposición para mejorar la legibilidad del texto -->
+        <div class="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-10"></div>
+
+        <!-- Contenido de texto sobre el video -->
+        <div class="relative z-10 p-5 flex flex-col items-center">
+            <!-- SUSTITUIR IMAGEN: 'ASALOGO5.jpg' - Tu logo principal -->
+            <img src="imagenes/logo.png" alt="Logo Arte Sanando Almas" class="mb-8 w-32 md:w-48">
+            
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                Un Refugio Creativo para tu Alma
+            </h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">
+                Cierra tus ojos un momento y olvida tus problemas. Entra a un refugio de calma, sin juicios. Un sitio para expresarte libremente, para compartir y crear nuevas amistades.
+            </p>
+            <a href="#experiencia" class="mt-8 bg-[--color-dorado] hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                Descubre la Experiencia
+            </a>
+        </div>
+    </section>
+
+    <!-- === DIAPOSITIVA 2: LA EXPERIENCIA DE LOS TALLERES === -->
+    <section id="experiencia" class="py-20 md:py-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-[--color-texto]">La Experiencia de Sanar Creando</h2>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Nuestros talleres son más que una clase de arte. Son un espacio seguro para desconectar, reconectar contigo y compartir con otros.</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                <!-- Columna de Imagen -->
+                <div class="w-full md:w-1/2">
+                    <!-- SUSTITUIR IMAGEN: 'comunidad en accion.jpg' - Imagen de un taller -->
+                    <img src="imagenes/comunidad en accion.jpg" alt="Taller de Arte Sanando Almas" class="content-media w-full shadow-2xl">
+                </div>
+                <!-- Columna de Texto -->
+                <div class="w-full md:w-1/2 text-left">
+                    <h3 class="text-3xl font-bold mb-4 text-[--color-lila]">Un Reseteo Emocional y Social</h3>
+                    <p class="mb-4 text-gray-600">En "Arte Sanando Almas", creemos que el bienestar emocional se nutre a través de la expresión creativa y la conexión social. Cada momento está diseñado para brindarte una experiencia de bienestar completa, donde puedes liberar el estrés y redescubrir el placer de crear con tus propias manos.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><span class="text-xl text-[--color-dorado] mr-3">✓</span><span><strong class="font-semibold">Sin juicios ni expectativas:</strong> Solo el placer de disfrutar el proceso creativo.</span></li>
+                        <li class="flex items-start"><span class="text-xl text-[--color-dorado] mr-3">✓</span><span><strong class="font-semibold">Guía profesional y empática:</strong> Te acompañamos en cada paso con una metodología basada en el mindfulness y la arteterapia.</span></li>
+                        <li class="flex items-start"><span class="text-xl text-[--color-dorado] mr-3">✓</span><span><strong class="font-semibold">Comunidad y conexión:</strong> Un ambiente cálido para conocer personas con tus mismos intereses y construir lazos de apoyo.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === DIAPOSITIVA 3: TESTIMONIOS === -->
+    <section id="testimonios" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-[--color-texto] mb-4">Lo que nuestras almas dicen</h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">La experiencia de nuestros participantes es nuestro mayor orgullo. Escucha sus historias.</p>
+            
+            <div class="max-w-4xl mx-auto bg-gray-100 p-4 rounded-xl shadow-lg">
+                 <!-- SUSTITUIR VIDEO: 'testimonio.mp4' - Video de testimonio -->
+                <video controls class="content-media w-full">
+                    <source src="videos/testimonio.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
+            <div class="mt-10 text-gray-700 italic">
+                <p class="max-w-3xl mx-auto">"Fue una tarde mágica. Llegué estresada del trabajo y salí renovada, con una pintura hecha por mí y el corazón lleno. Lo recomiendo totalmente." - Participante Satisfecha</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- === DIAPOSITIVA 4: NUESTRA FILOSOFÍA === -->
+    <section id="filosofia" class="py-20 md:py-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-[--color-texto]">Nuestros Pilares</h2>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Nuestras acciones y decisiones se rigen por principios fundamentales que garantizan una experiencia transformadora.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Pilar 1 -->
+                <div class="text-center">
+                    <div class="mb-4 inline-block p-5 bg-[--color-lila] bg-opacity-20 rounded-full">
+                        <i class="fas fa-brain text-4xl text-[--color-lila]"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Creatividad Intuitiva</h3>
+                    <p class="text-gray-600">Valoramos el proceso, no la perfección. Fomentamos la libre expresión para que disfrutes del acto de crear como una forma de meditación y autodescubrimiento.</p>
+                </div>
+                <!-- Pilar 2 -->
+                <div class="text-center">
+                    <div class="mb-4 inline-block p-5 bg-[--color-dorado] bg-opacity-20 rounded-full">
+                        <i class="fas fa-shield-heart text-4xl text-[--color-dorado]"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Espacio Seguro y Empatía</h3>
+                    <p class="text-gray-600">Creamos un refugio donde cada emoción es válida y cada historia es respetada. Escuchamos sin juicio para que te sientas visto y comprendido.</p>
+                </div>
+                <!-- Pilar 3 -->
+                <div class="text-center">
+                    <div class="mb-4 inline-block p-5 bg-[--color-lila] bg-opacity-20 rounded-full">
+                        <i class="fas fa-users text-4xl text-[--color-lila]"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Impacto Social y Comunidad</h3>
+                    <p class="text-gray-600">Facilitamos un ambiente de confianza para conectar genuinamente, construyendo lazos que nutren el alma y aportando al bienestar de nuestra comunidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === DIAPOSITIVA 5: QUIÉNES SOMOS Y CONTACTO === -->
+    <section id="nosotras" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-[--color-texto]">Nuestra Historia</h2>
+                <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Somos Nancy y Carolina. Nos unió una búsqueda compartida de sanación y el poder transformador del arte. Ahora, ofrecemos lo que a nosotras nos salvó.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-12 mb-20">
+                <!-- Perfil Nancy -->
+                <div class="text-center flex flex-col items-center">
+                    <!-- SUSTITUIR IMAGEN: 'foto_nancy.jpg' - Foto de Nancy -->
+                    <img src="https://placehold.co/200x200/C7C6E1/FFFFFF?text=Nancy" alt="Nancy Ugarte" class="w-48 h-48 rounded-full object-cover shadow-lg mb-4">
+                    <h3 class="text-2xl font-bold">Nancy Ugarte</h3>
+                    <p class="text-gray-600 max-w-xs">Directora de Operaciones y Experiencia, con 20 años de experiencia humanitaria y formación en arteterapia y primeros auxilios psicológicos.</p>
+                </div>
+                <!-- Perfil Carolina -->
+                <div class="text-center flex flex-col items-center">
+                    <!-- SUSTITUIR IMAGEN: 'foto_carolina.jpg' - Foto de Carolina -->
+                    <img src="https://placehold.co/200x200/E1B37F/FFFFFF?text=Carolina" alt="Carolina Portilla" class="w-48 h-48 rounded-full object-cover shadow-lg mb-4">
+                    <h3 class="text-2xl font-bold">Carolina Portilla</h3>
+                    <p class="text-gray-600 max-w-xs">Directora de Marketing y Marca, con una visión estratégica y creativa para comunicar nuestra misión de manera auténtica.</p>
+                </div>
+            </div>
+
+            <!-- Sección de Redes Sociales -->
+            <div id="contacto" class="text-center pt-10">
+                <h3 class="text-3xl font-bold mb-4">Conecta con nuestra comunidad</h3>
+                <p class="text-lg text-gray-600 mb-8">Síguenos en nuestras redes sociales para inspirarte y enterarte de nuestros próximos talleres.</p>
+                <div class="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
+                    <!-- Instagram -->
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.instagram.com/artesanandoalmas" target="_blank" class="text-5xl text-gray-700 hover:text-[--color-dorado] transition-transform duration-300 hover:scale-110">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <p class="mt-2 font-semibold">@artesanandoalmas</p>
+                        <!-- SUSTITUIR IMAGEN: 'instagram.png' - Tu código QR de Instagram -->
+                        <img src="imagenes/instagram.jpeg" alt="QR Instagram" class="w-32 h-32 mt-2 rounded-lg">
+                    </div>
+                    <!-- TikTok -->
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.tiktok.com/@arte.sanando.alma" target="_blank" class="text-5xl text-gray-700 hover:text-[--color-dorado] transition-transform duration-300 hover:scale-110">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <p class="mt-2 font-semibold">@arte.sanando.alma</p>
+                         <!-- SUSTITUIR IMAGEN: 'tiktok.jpeg' - Tu código QR de TikTok -->
+                        <img src="imagenes/tiktok.jpeg" alt="QR TikTok" class="w-32 h-32 mt-2 rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Arte Sanando Almas. Todos los derechos reservados.</p>
+            <p class="text-sm text-gray-400 mt-1">Diseñado con amor en Lima, Perú.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
